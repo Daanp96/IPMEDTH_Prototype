@@ -5,7 +5,48 @@
 }
 
 body {
-    background-image: url("../images/zoo_front.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #F0E1B8;
 }
+
+.zoo_gate {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.zoo_gate_front {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.zoo_gate_arrow {
+    max-width: 75px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+    cursor: pointer;
+    transition: 0.5s all ease;
+}
+
+.zoo_gate_arrow:hover{
+    max-width: 95px;
+}
+
+.overlay {
+    background-color:black;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+ 
