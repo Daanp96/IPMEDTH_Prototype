@@ -24,6 +24,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    transition: filter 1s;
 }
 
 .zoo_gate_arrow {
@@ -38,6 +39,22 @@ body {
 
 .zoo_gate_arrow:hover{
     max-width: 95px;
+}
+
+.zoo_gate_lock {
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    top: 460px;
+    width: 40px;
+    opacity: 0;
+    transition: all 2s ease;
+    cursor: pointer;
+}
+
+.zoo_gate_lock:hover {
+    width: 60px;
 }
 
 .overlay {
