@@ -4,7 +4,6 @@ const puzzel3Button = document.getElementById('js--puzzel3Button');
 
 var startTime, endTime;
 
-
 if(document.URL.includes('dierentuinpad.html')){
     puzzel2Button.style.cursor = 'default';
     puzzel3Button.style.cursor = 'default';
