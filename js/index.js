@@ -10,4 +10,13 @@ if(document.URL.includes('dierentuinpad-2.html')){
     puzzel1Button.style.cursor = 'default';
     puzzel3Button.style.cursor = 'default';
 }
+if(document.URL.includes('dierentuinpad-3.html')){
+    puzzel1Button.style.cursor = 'default';
+    puzzel2Button.style.cursor = 'default';
+}
+if(document.URL.includes('dierentuinpad-4.html')){
+    puzzel1Button.style.cursor = 'default';
+    puzzel2Button.style.cursor = 'default';
+    puzzel3Button.style.cursor = 'default';
+}
 

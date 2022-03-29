@@ -74,10 +74,12 @@
     background-repeat: no-repeat;
     background-size: contain;
     grid-column: 11 / span 4;
-    grid-row: 7 /span 3;
+    grid-row: 6 /span 3;
 }
 
-.ratedStar1, .ratedStar2, .ratedStar3{
+.ratedStar1, .ratedStar2, .ratedStar3,
+.ratedStar4, .ratedStar5, .ratedStar6,
+.ratedStar7, .ratedStar8, .ratedStar9{
     background: rgba(255, 255, 201, 0.7);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 5rem;
@@ -103,8 +105,42 @@
     top: 2rem;
     left: 1.5rem;
 }
+.ratedStar4{
+    grid-column: 9 / span 1;
+    grid-row: 7 /span 1;
+    left: 3rem;
+    bottom: 1rem;
+}
+.ratedStar5{
+    grid-column: 11 / span 1;
+    grid-row: 7 /span 1;
+    bottom: 1rem;
+}
+.ratedStar6{
+    grid-column: 10 / span 1;
+    grid-row: 7 /span 1;
+    top: 2rem;
+    left: 1.5rem;
+}
+.ratedStar7{
+    grid-column: 14 / span 1;
+    grid-row: 9 /span 1;
+    left: 3rem;
+    bottom: 1rem;
+}
+.ratedStar8{
+    grid-column: 16 / span 1;
+    grid-row: 9 /span 1;
+    bottom: 1rem;
+}
+.ratedStar9{
+    grid-column: 15 / span 1;
+    grid-row: 9 /span 1;
+    top: 2rem;
+    left: 1.5rem;
+}
 
-.ratedStar{
+.star{
     position: absolute;
     background-image: url(../images/ratedStar.png);
     width: 100%;
@@ -114,15 +150,14 @@
     outline: none;
 }
 
-/* .ratedStar1--image {
-
-} */
-/* .ratedStar2--image {
-
-} */
-.ratedStar3--image {
+.star3--image, .star6--image, .star9--image {
     bottom: 0.5rem;
     right: 0rem ;
     transform: rotate(35deg);
 }
-
+.newChapterButton{
+    background-image: url('../images/newChapterButton.png');
+    background-repeat: no-repeat;
+    grid-column: 19 / span 1;
+    grid-row: 8 /span 1;
+}
