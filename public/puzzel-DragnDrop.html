@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzel Prototype</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="js/drag&drop.js" defer></script>
+</head>
+<body class="background">
+    <div class="container">
+            <img id="js--monkeyLB" class="container__items__LB" src="/images/monkey_puzzle/monkeyLB.png" draggable="true" ondragstart="drag(event)" >
+            <img id="js--monkeyLO" class="container__items__LO" src="/images/monkey_puzzle/monkeyLO.png" draggable="true" ondragstart="drag(event)" >
+            <img id="js--monkeyRB" class="container__items__RB" src="/images/monkey_puzzle/monkeyRB.png" draggable="true" ondragstart="drag(event)" >
+            <img id="js--monkeyLO" class="container__items__RO" src="/images/monkey_puzzle/monkeyRO.png" draggable="true" ondragstart="drag(event)" >
+            <!-- monkey difference -->
+            <img id="js--monkeyBD_LB" class="container__BD__LB" ondrop="drop(event)" src="/images/monkey_puzzle/monkeyBDLB.png" ondragover="allowDrop(event)"></img>
+            <img id="js--monkeyBD_LO" class="container__BD__LO" ondrop="drop(event)" src="/images/monkey_puzzle/monkeyBDLO.png" ondragover="allowDrop(event)"></img>
+            <img id="js--monkeyBD_RB" class="container__BD__RB" ondrop="drop(event)" src="/images/monkey_puzzle/monkeyBDRB.png" ondragover="allowDrop(event)"></img>
+            <img id="js--monkeyBD_RO" class="container__BD__RO" ondrop="drop(event)" src="/images/monkey_puzzle/monkeyBDRO.png" ondragover="allowDrop(event)"></img>
+    </div>  
+        
+</body>
+</html>

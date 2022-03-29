@@ -208,8 +208,57 @@ body {
 }
 
 .background{
-    background-image: url(/images/monkey_bg.jpg);
-    background-position: center;
+    background-image: url(/images/monkey_puzzle/monkey_bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.container{
+    display: grid;
+    max-height: 50rem;
+    max-width: 100%;
+    grid-template-rows: repeat(10, minmax(0,1fr));
+    grid-template-columns: repeat(20, minmax(0,1fr));
+}
+
+.container__items__LB{
+    grid-row: 2 /span 1;
+    grid-column: 2/span 1;
+
+}
+
+.container__items__LO{
+    grid-row: 9 /span 1;
+    grid-column: 2/span 1;
+
+}
+
+.container__items__RB{
+    grid-row: 2 /span 1;
+    grid-column: 15/span 1;
+
+}
+
+.container__items__RO{
+    grid-row: 9 /span 1;
+    grid-column: 15/span 1;
+
+}
+/* backdrop monkey start */
+.container__BD__LB{
+    grid-row: 2 /span 1;
+    grid-column: 7/span 1;
+}
+
+.container__BD__LO{
+    grid-row: 8 /span 1;
+    grid-column: 7/span 1;
+}
+.container__BD__RB{
+    grid-row: 2 /span 1;
+    grid-column: 11/span 1;
+}
+.container__BD__RO{
+    grid-row: 8 /span 1;
+    grid-column: 11/span 1;
 }
