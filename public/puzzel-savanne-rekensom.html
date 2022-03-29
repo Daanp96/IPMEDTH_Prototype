@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../styles/main.css">
     <title>Dierentuinpad</title>
 </head>
-<body class="dierenpad--background" onload="start()">
+<body class="savanne-rekensom--background" onload="start()">
     <main>
-        <button onclick="end()">Volgende!</button>
+        
+        <section class="section-grid">
+            <button class="backButton"></button>
+            <div class="savanne-rekensom--leeuw positie-leeuw1"></div>
+            <div class="savanne-rekensom--leeuw positie-leeuw2"></div>
+            <form class="rekensom-form" action="">
+                <label class="rekensom-form--label" for="aantalDieren">Aantal dieren:</label>
+                <input class="rekensom-form--input" type="number" required>
+                <input class="rekensom-form-button" type="submit" value="" onclick="end()"></input>
+            </form>  
+        </section>
     </main>
-    <script src="js/index.js"></script>
+    <script src="../js/map.jss"></script>
 </body>
 </html>
