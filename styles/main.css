@@ -156,7 +156,7 @@
     transform: rotate(35deg);
 }
 .newChapterButton{
-    background-image: url('../images/newChapterButton.png');
+    background-image: url(../images/newChapterButton.png);
     background-repeat: no-repeat;
     grid-column: 19 / span 1;
     grid-row: 8 /span 1;
