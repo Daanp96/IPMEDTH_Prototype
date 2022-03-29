@@ -1,7 +1,11 @@
-* {
+*, *::before, *::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 body {
@@ -49,4 +53,156 @@ body {
     transition: opacity 2s;
 }
 
- 
+.dierenpad--background{
+    font-size: 1.6rem;
+    background-image: url('../images/background-savanna.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.section-grid{
+    width: 100%;
+    height: 71rem;
+    display: grid;
+    grid-template-rows: repeat(10, minmax(0,1fr));
+    grid-template-columns: repeat(20, minmax(0,1fr));
+    border-radius: 0.5rem;
+}
+
+.backButton{
+    background-image: url(../images/backButton.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    grid-column: 2 / span 1;
+    grid-row: 2 /span 1;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+.puzzel1Button, .puzzel2Button, .puzzel3Button{
+    border-radius: 4rem;
+    background: rgba(194, 194, 194, 0.9);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.puzzel1Button{
+    grid-column: 5 / span 1;
+    grid-row: 4 /span 1;
+}
+
+.puzzel2Button{
+    grid-column: 10 / span 1;
+    grid-row: 6 /span 1;
+}
+
+.puzzel3Button{
+    grid-column: 15 / span 1;
+    grid-row: 8 /span 1;
+}
+
+.arrow1{
+    background-image: url(../images/arrowWhite.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    grid-column: 6 / span 4;
+    grid-row: 4 /span 3;
+}
+
+.arrow2{
+    background-image: url(../images/arrowWhite2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    grid-column: 11 / span 4;
+    grid-row: 6 /span 3;
+}
+
+.ratedStar1, .ratedStar2, .ratedStar3,
+.ratedStar4, .ratedStar5, .ratedStar6,
+.ratedStar7, .ratedStar8, .ratedStar9{
+    background: rgba(255, 255, 201, 0.7);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 3rem;
+    position: relative;
+}
+
+.ratedStar1{
+    grid-column: 4 / span 1;
+    grid-row: 5 /span 1;
+    left: 3rem;
+    bottom: 1rem;
+}
+.ratedStar2{
+    grid-column: 6 / span 1;
+    grid-row: 5 /span 1;
+    bottom: 1rem;
+}
+.ratedStar3{
+    grid-column: 5 / span 1;
+    grid-row: 5 /span 1;
+    top: 2rem;
+    left: 1.5rem;
+}
+.ratedStar4{
+    grid-column: 9 / span 1;
+    grid-row: 7 /span 1;
+    left: 3rem;
+    bottom: 1rem;
+}
+.ratedStar5{
+    grid-column: 11 / span 1;
+    grid-row: 7 /span 1;
+    bottom: 1rem;
+}
+.ratedStar6{
+    grid-column: 10 / span 1;
+    grid-row: 7 /span 1;
+    top: 2rem;
+    left: 1.5rem;
+}
+.ratedStar7{
+    grid-column: 14 / span 1;
+    grid-row: 9 /span 1;
+    left: 3rem;
+    bottom: 1rem;
+}
+.ratedStar8{
+    grid-column: 16 / span 1;
+    grid-row: 9 /span 1;
+    bottom: 1rem;
+}
+.ratedStar9{
+    grid-column: 15 / span 1;
+    grid-row: 9 /span 1;
+    top: 2rem;
+    left: 1.5rem;
+}
+
+.star{
+    position: absolute;
+    background-image: url(../images/ratedStar.png);
+    width: 100%;
+    height: 100%;
+    bottom: 0.3rem;
+    right: 0.3rem;
+    outline: none;
+}
+
+.star3--image, .star6--image, .star9--image {
+    bottom: 0.5rem;
+    right: 0rem ;
+    transform: rotate(35deg);
+}
+.newChapterButton{
+    background-image: url('../images/newChapterButton.png');
+    background-repeat: no-repeat;
+    grid-column: 19 / span 1;
+    grid-row: 8 /span 1;
+}
