@@ -206,3 +206,10 @@ body {
     grid-column: 19 / span 1;
     grid-row: 8 /span 1;
 }
+
+.background{
+    background-image: url(/images/monkey_bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
