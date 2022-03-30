@@ -302,7 +302,7 @@ body {
     background-position: center;
 }
 .foutdier-leeuwenhoofd{
-    background-image: url('../images/leeuwen-hoofd.png');
+    background-image: url('../images/aapHoofd.png');
     background-repeat: no-repeat;
     background-size: contain;
     grid-column: 9 / span 4;
