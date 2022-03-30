@@ -223,30 +223,38 @@ body {
     margin: 2rem;
     border-radius: 3rem;
     text-align: center;
+
+    display: grid;
+    grid-template-rows: repeat(3, minmax(0,1fr));
+    grid-template-columns: repeat(6, minmax(0,1fr));
 }
 .rekensom-form--label{
     margin-top: 1rem;
-    text-align: center;
     font-size: 4rem;
     display: block;
+    grid-column: 2 / span 4;
+    grid-row: 1;
 }
 .rekensom-form--input{
-    width: 22rem;
     height: 4rem;
     margin-top: 1.5rem;
     padding-left: 1rem;
     font-size: 2rem;
+    grid-column: 2 / span 4;
+    grid-row: 2;
 }
 .rekensom-form--button{
     background-image: url('../images/submitButton.png');
     background-repeat: no-repeat;
     background-color:transparent;
     border: none;
-    margin-left: 16rem;
-    display: block;
-    width: 11rem;
-    height: 5rem;
+    /* display: block; */
+    /* width: 11rem; */
+    /* height: 5rem; */
     cursor: pointer;
+
+    grid-column: 3 / span 2;
+    grid-row: 3;
 }
 .rekensom-form--button:hover,
 .backButton:hover, .foutdier-form--button:hover{
