@@ -2,6 +2,7 @@ const overlay = document.getElementById("js--overlay");
 const gate = document.getElementById("js--gate");
 const arrow = document.getElementById("js--arrow");
 const lock = document.getElementById("js--lock");
+const map = document.getElementById("js--map");
 
 // Audio
 const gate_shut = document.getElementById("js--gate_shut");
@@ -30,7 +31,7 @@ const enhanceLock = () => {
         lock.style.width = "40px";
         lock.style.top = "460px";
         gate.style.filter = "blur(0px)";
-
+        map.style.opacity = "1";
     } else {
         lock.style.width = "260px";
         lock.style.top = "250px";
@@ -38,4 +39,8 @@ const enhanceLock = () => {
         slot_uitleg.play();
     }
     count++;
+}
+
+const nextPage = () => {
+    window.location = "/public/dierentuinpad.html";
 }
