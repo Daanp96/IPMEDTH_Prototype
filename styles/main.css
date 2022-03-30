@@ -213,52 +213,73 @@ body {
     background-size: cover;
 }
 
-.container{
-    display: grid;
-    max-height: 50rem;
-    max-width: 100%;
-    grid-template-rows: repeat(10, minmax(0,1fr));
-    grid-template-columns: repeat(20, minmax(0,1fr));
+.monkeyLB{
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+}
+.monkeyLB:hover{
+    cursor: grabbing;
 }
 
-.container__items__LB{
-    grid-row: 2 /span 1;
-    grid-column: 2/span 1;
-
+.monkeyLO{
+    position: absolute;
+    top: 10%;
+    right: 20%;
+}
+.monkeyLO:hover{
+    cursor: grabbing;
 }
 
-.container__items__LO{
-    grid-row: 9 /span 1;
-    grid-column: 2/span 1;
-
+.monkeyRB{
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+}
+.monkeyRB:hover{
+    cursor: grabbing;
+}
+.monkeyRO{
+    position: absolute;
+    top: 10%;
+    left: 20%;
+}
+.monkeyRO:hover{
+    cursor: grabbing;
 }
 
-.container__items__RB{
-    grid-row: 2 /span 1;
-    grid-column: 15/span 1;
-
+.monkeyBD__LB{
+    position: absolute;
+    top: 20%;
+    left: 40%;
 }
 
-.container__items__RO{
-    grid-row: 9 /span 1;
-    grid-column: 15/span 1;
+.monkeyBD__LO{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+.monkeyBD__RB{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+.monkeyBD__RO{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+} 
 
-}
-/* backdrop monkey start */
-.container__BD__LB{
-    grid-row: 2 /span 1;
-    grid-column: 7/span 1;
-}
-
-.container__BD__LO{
-    grid-row: 8 /span 1;
-    grid-column: 7/span 1;
-}
-.container__BD__RB{
-    grid-row: 2 /span 1;
-    grid-column: 11/span 1;
-}
-.container__BD__RO{
-    grid-row: 8 /span 1;
-    grid-column: 11/span 1;
+.btnAap{
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    border-radius: 50px;
+    font-size: 4rem;
+    background-color: #05DA34;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /*visibility: ;*/
 }
