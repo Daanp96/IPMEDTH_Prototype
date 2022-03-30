@@ -55,14 +55,14 @@ if(document.URL.includes('puzzel-savanne-rekensom.html')){
         aantalSecondesSavanneRekensom = seconds;
         console.log(aantalSecondesSavanneRekensom);
         
-        // if(seconds <= 60){
-        if(seconds <= 2){
+        if(seconds <= 60){
+        // if(seconds <= 2){
             localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
             console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
             console.log("3 sterren");
         }
-        // if(seconds > 60 && seconds <= 120){
-        if(seconds > 2 && seconds <= 7){
+        if(seconds > 60 && seconds <= 120){
+        // if(seconds > 2 && seconds <= 7){
             try {
                 console.log("2 sterren");
                 localStorage.setItem('star2', 0);
@@ -73,8 +73,8 @@ if(document.URL.includes('puzzel-savanne-rekensom.html')){
                 console.log(error);
             }
         }
-        // if(seconds > 120){
-        if(seconds > 8){
+        if(seconds > 120){
+        // if(seconds > 8){
             try {
                 console.log("1 ster"); 
                 localStorage.setItem('star3', 0);
@@ -95,5 +95,7 @@ if(document.URL.includes('puzzel-savanne-rekensom.html')){
 function end(){
     window.location.href="dierentuinpad-2.html";  
 }
-
+function backButtonSavanneRekensom(){
+    window.location.href="dierentuinpad.html";  
+}
 
