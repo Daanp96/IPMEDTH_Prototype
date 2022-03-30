@@ -214,6 +214,8 @@ body {
 }
 
 .monkeyLB{
+    width: 15%;
+    height: auto;
     position: absolute;
     bottom: 10%;
     right: 20%;
@@ -223,6 +225,8 @@ body {
 }
 
 .monkeyLO{
+    width: 15%;
+    height: auto;
     position: absolute;
     top: 10%;
     right: 20%;
@@ -232,6 +236,8 @@ body {
 }
 
 .monkeyRB{
+    width: 15%;
+    height: auto;
     position: absolute;
     bottom: 10%;
     left: 20%;
@@ -240,6 +246,8 @@ body {
     cursor: grabbing;
 }
 .monkeyRO{
+    width: 15%;
+    height: auto;
     position: absolute;
     top: 10%;
     left: 20%;
@@ -249,37 +257,45 @@ body {
 }
 
 .monkeyBD__LB{
+    width: 15%;
+    height: auto;
     position: absolute;
-    top: 20%;
-    left: 40%;
+    top: 0%;
+    left: 32%;
 }
 
 .monkeyBD__LO{
+    width: 15%;
+    height: auto;
     position: absolute;
-    top: 40%;
-    left: 40%;
+    top: 40.6%;
+    left: 32%;
 }
 .monkeyBD__RB{
+    width: 15%;
+    height: auto;
     position: absolute;
-    top: 20%;
-    left: 50%;
+    top: 0%;
+    left: 51.5%;
 }
 .monkeyBD__RO{
+    width: 25%;
+    height: auto;
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 40.6%;
+    left: 51.5%;
 } 
 
 .btnAap{
     width: 150px;
     height: 50px;
     position: absolute;
-    bottom: 25%;
-    left: 50%;
+    bottom: 5%;
+    left: 47.5%;
     border-radius: 50px;
     font-size: 4rem;
     background-color: #05DA34;
     align-items: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    /*visibility: ;*/
+    cursor: pointer;
 }

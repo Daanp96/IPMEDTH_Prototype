@@ -1,10 +1,19 @@
-const alertGood = new Audio('/audio/puzzelAlertGood.mp3'); 
-const alertWrong = new Audio('/audio/puzzelAlertWrong.mp3');
+const introPage = new Audio('../audio/puzzelAapIntro.mp3');
+const alertGood = new Audio('../audio/puzzelAlertGood.mp3'); 
+const alertWrong = new Audio('../audio/puzzelAlertWrong.mp3');
 
 const backdropMonkeyLB = document.getElementById("div1").style.opacity = "0.5"; 
 const backdropMOnkeyLO = document.getElementById("div2").style.opacity = "0.5";
 const backdropMOnkeyRB = document.getElementById("div3").style.opacity = "0.5"; 
 const backdropMOnkeyRO = document.getElementById("div4").style.opacity = "0.5"; 
+
+function intro(){
+    introPage.play();
+}
+
+window.onload = function(){
+    intro()
+}
 
 function good(){
     alertGood.play();
