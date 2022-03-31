@@ -15,9 +15,11 @@ app.get('/', (req, res) => {
     res.send('index.html');
 });
 
+const rando = Math.floor(Math.random() * 1000) + 1;
+
 app.post('/sendData', (req, res) => {
     if(req.body){
-        fs.writeFile(`logging/data/text_input_${req.body.puzzel}.json`, JSON.stringify(req.body.data), (err) => {
+        fs.writeFile(`logging/data/text_input_${req.body.puzzel}_${rando}.json`, JSON.stringify(req.body.data), (err) => {
             if (err) {
                 throw err;
             }

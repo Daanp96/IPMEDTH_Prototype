@@ -22,41 +22,14 @@ const wrong = document.getElementById("js--wrong");
 
 // logging
 const key_input = document.getElementById("js--keyInput");
+const number_input = document.getElementById("js--number_input");
 const btn_log = document.getElementById("btnLogData");
+
 const keyPresses = []
 const keyObj = {
     data: [],
     puzzel: "" 
 }
-
-key_input.addEventListener('keydown', e => {
-    keyPresses.push(e.key);
-    console.log(keyPresses);
-});
-
-formSubmit.addEventListener('click', e => {
-    e.preventDefault();
-
-    keyObj.data = keyPresses;
-    keyObj.puzzel = formSubmit.getAttribute("data-puzzel");
-    const data = JSON.stringify(keyObj);
-
-    fetch('http://localhost:3000/sendData', {
-        method: 'POST', 
-        body: data,
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'http://localhost:3000',
-            'Access-Control-Allow-Credentials': true
-        }
-    })
-    .then(data => {
-        console.log('Success:', data);
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-});
 
 // antwoorden
 const reken_correct = 6;
@@ -167,6 +140,10 @@ function start(){
 }
 
 if(document.URL.includes('puzzel-savanne-rekensom.html')){
+    number_input.addEventListener('keydown', e => {
+        keyPresses.push(e.key);
+        console.log(keyPresses);
+    });
 
     puzzle_music.play();
 
@@ -184,13 +161,13 @@ if(document.URL.includes('puzzel-savanne-rekensom.html')){
         if(form_answer == reken_correct){
             good_job.play();
             
-            if(seconds <= 2){
+            if(seconds <= 7){
                 localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
                 // console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
                 // console.log("3 sterren");
             }
             // if(seconds > 60 && seconds <= 120){
-            if(seconds > 2 && seconds <= 7){
+            if(seconds > 7 && seconds <= 15){
                 try {
                     // console.log("2 sterren");
                     localStorage.setItem('star2', 0);
@@ -202,7 +179,7 @@ if(document.URL.includes('puzzel-savanne-rekensom.html')){
                 }
             }
             // if(seconds > 120){
-            if(seconds > 8){
+            if(seconds > 15){
                 try {
                     // console.log("1 ster"); 
                     localStorage.setItem('star3', 0);
@@ -217,11 +194,30 @@ if(document.URL.includes('puzzel-savanne-rekensom.html')){
             }
             
             good_job.onended = () => {
-                endSavanneRekensom();
+                keyObj.data = keyPresses;
+                keyObj.puzzel = formSubmit.getAttribute("data-puzzel");
+                const data = JSON.stringify(keyObj);
+
+                fetch('http://localhost:3000/sendData', {
+                    method: 'POST', 
+                    body: data,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': 'http://localhost:3000',
+                        'Access-Control-Allow-Credentials': true
+                    }
+                })
+                .then(data => {
+                    console.log('Success:', data);
+                    endSavanneRekensom();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+                
             }
         } else {
             alert("dat klopt niet...");
-
         }
         
         // if(seconds <= 60){
@@ -231,6 +227,11 @@ if(document.URL.includes('puzzel-savanne-rekensom.html')){
 }
 
 if(document.URL.includes('puzzel-savanne-foutDier.html')){
+    key_input.addEventListener('keydown', e => {
+        keyPresses.push(e.key);
+        console.log(keyPresses);
+    });
+
     puzzle_music.play();
 
     formSubmit.addEventListener("click", function(e){
@@ -246,13 +247,13 @@ if(document.URL.includes('puzzel-savanne-foutDier.html')){
         if (text_answer.toLowerCase() === foutDier_correct) {
             good_job.play();
 
-            if(seconds <= 2){
+            if(seconds <= 5){
                 localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
                 console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
                 console.log("3 sterren");
             }
             // if(seconds > 60 && seconds <= 120){
-            if(seconds > 2 && seconds <= 7){
+            if(seconds > 5 && seconds <= 10){
                 try {
                     console.log("2 sterren");
                     localStorage.setItem('star5', 0);
@@ -264,7 +265,7 @@ if(document.URL.includes('puzzel-savanne-foutDier.html')){
                 }
             }
             // if(seconds > 120){
-            if(seconds > 8){
+            if(seconds > 10){
                 try {
                     console.log("1 ster"); 
                     localStorage.setItem('star6', 0);
@@ -280,7 +281,27 @@ if(document.URL.includes('puzzel-savanne-foutDier.html')){
             }
 
             good_job.onended = () => {
-                endSavanneFoutdier();
+                keyObj.data = keyPresses;
+                keyObj.puzzel = formSubmit.getAttribute("data-puzzel");
+                const data = JSON.stringify(keyObj);
+
+                fetch('http://localhost:3000/sendData', {
+                    method: 'POST', 
+                    body: data,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': 'http://localhost:3000',
+                        'Access-Control-Allow-Credentials': true
+                    }
+                })
+                .then(data => {
+                    console.log('Success:', data);
+                    endSavanneFoutdier();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+                
             }
             
         } else {
@@ -302,13 +323,13 @@ if(document.URL.includes('puzzel-DragnDrop.html')){
         console.log(aantalSecondesSavanneDragnDrop);
         
         // if(seconds <= 60){
-        if(seconds <= 2){
+        if(seconds <= 10){
             localStorage.setItem("aantalSecondesSavanneDragnDrop", aantalSecondesSavanneDragnDrop);
             console.log(localStorage.getItem('aantalSecondesSavanneDragnDrop'));
             console.log("3 sterren");
         }
         // if(seconds > 60 && seconds <= 120){
-        if(seconds > 2 && seconds <= 7){
+        if(seconds > 10 && seconds <= 20){
             try {
                 console.log("2 sterren");
                 localStorage.setItem('star8', 0);
@@ -320,7 +341,7 @@ if(document.URL.includes('puzzel-DragnDrop.html')){
             }
         }
         // if(seconds > 120){
-        if(seconds > 8){
+        if(seconds > 20){
             try {
                 console.log("1 ster"); 
                 localStorage.setItem('star9', 0);

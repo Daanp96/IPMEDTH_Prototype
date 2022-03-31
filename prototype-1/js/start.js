@@ -19,7 +19,7 @@ const doOverlay = () => {
 
     gate_shut.onended = () => {
         overlay.style.opacity = "0";
-        gate.src = "../images/zoo_gate_back.jpg";
+        gate.src = "prototype-1/images/zoo_gate_back.jpg";
         arrow.style.display = "none";
         lock.style.opacity = "1";
         oh_nee.volume = 1;
@@ -43,5 +43,5 @@ const enhanceLock = () => {
 }
 
 const nextPage = () => {
-    window.location = "../public/dierentuinpad.html";
+    window.location = "prototype-1/public/dierentuinpad.html";
 }

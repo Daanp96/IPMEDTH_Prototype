@@ -9,7 +9,6 @@
 </head>
 <body class="savanne-rekensom--background" onload="start()">
     <main>
-        <audio id="js--puzzle_music" src="../audio/puzzel_music_short.mp3" loop></audio>
         <audio id="js--good_job" src="../audio/alert_good.mp3"></audio>
         <audio id="js--wrong" src="../audio/alert_wrong.mp3"></audio>
         <audio id="js--puzzle_explain" src="../audio/dieren_raden.mp3" autoplay></audio>
@@ -22,8 +21,8 @@
             <div class="savanne-rekensom--aap positie-aap2"></div>
             <form name="answerForm" class="rekensom-form">
                 <label class="rekensom-form--label" for="aantalDieren">Aantal dieren:</label>
-                <input name="numberInput" class="rekensom-form--input" type="number" required>
-                <button class="rekensom-form--button" id="js--form-submit" type="submit" value=""></button>
+                <input id="js--number_input" name="numberInput" class="rekensom-form--input" type="number" required>
+                <button class="rekensom-form--button" id="js--form-submit" data-puzzel="rekensom_proto2" type="submit" value=""></button>
             </form>  
         </section>
     </main>

@@ -84,6 +84,18 @@ body {
     transition: opacity 2s;
 }
 
+.backButton{
+    background-image: url('../images/backButton.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    grid-column: 2 / span 1;
+    grid-row: 2 /span 1;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
 .dierenpad--background{
     font-size: 1.6rem;
     background-image: url('../images/background-savanna.png');
