@@ -111,6 +111,7 @@ if(document.URL.includes('dierentuinpad-3.html')){
     }
 }
 if(document.URL.includes('dierentuinpad-4.html')){
+
     puzzel1Button.style.cursor = 'default';
     puzzel2Button.style.cursor = 'default';
     puzzel3Button.style.cursor = 'default';
@@ -387,8 +388,42 @@ function endSavanneFoutdier(){
     window.location.href="dierentuinpad-3.html";  
 }
 function reset(){
-    localStorage.clear();
-    window.location.href="../../index.html"; 
+    const local = [];
+    const dataStorage = {
+        time: [],
+        proto: ""
+    };
+
+    for(let i = 0; i < localStorage.length; i++){
+        let key = localStorage.key(i);
+        let item = localStorage.getItem(key);
+        local.push(item);
+    }
+
+    dataStorage.time = local;
+    dataStorage.proto = "1";
+
+    const data = JSON.stringify(dataStorage);
+    console.log(data);
+
+    fetch('http://localhost:3000/sendStorage', {
+        method: 'POST', 
+        body: data,
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Access-Control-Allow-Credentials': true
+        }
+    })
+    .then(data => {
+        console.log('Success:', data);
+        localStorage.clear();
+        window.location.href="../../index.html"; 
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
 };
 
 
