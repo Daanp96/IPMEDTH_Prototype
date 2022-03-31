@@ -163,7 +163,8 @@ function endSavanneDragnDrop(){
     window.location.href="dierentuinpad.html"; 
 }
 
-// newChapterButton.addEventListener("click", function(e){
-//     window.location.href="../../index2.html"; 
-// });
+function reset(){
+    localStorage.clear();
+    window.location.href="../../index2.html"; 
+};
 
