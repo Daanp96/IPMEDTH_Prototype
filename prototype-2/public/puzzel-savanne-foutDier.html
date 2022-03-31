@@ -13,10 +13,10 @@
         <audio id="js--wrong" src="../audio/alert_wrong.mp3"></audio>
         <audio id="js--puzzle_explain" src="../audio/fout_dier.mp3" autoplay></audio>
         <section class="section-grid">
-            <button class="backButton"></button>
+            <button class="backButton" onclick="window.location.href='dierentuinpad.html'"></button>
             <form name="answerForm" class="foutdier-form" action="dierentuinpad.html">
-                <input name="textInput" class="foutdier-form--input" type="text" value="Zebra" required>
-                <button class="foutdier-form--button" id="js--form-submit" type="submit" value=""></button>
+                <input id="js--keyInput" name="textInput" class="foutdier-form--input" type="text" value="Zebra" required>
+                <button class="foutdier-form--button" id="js--form-submit" data-puzzel="fout_dier_proto2" type="submit"></button>
             </form>  
             <div class="foutdier-leeuwenhoofd"></div>
         </section>
