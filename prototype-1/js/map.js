@@ -18,6 +18,7 @@ const ratedStar9 = document.getElementById("js--ratedStar9");
 const map_music = document.getElementById("js--map_music");
 const puzzle_music = document.getElementById("js--puzzle_music");
 const good_job = document.getElementById("js--good_job");
+const wrong = document.getElementById("js--wrong");
 
 // antwoorden
 const reken_correct = 6;
@@ -181,7 +182,8 @@ if(document.URL.includes('puzzel-savanne-rekensom.html')){
                 endSavanneRekensom();
             }
         } else {
-            alert("dat klopt niet...")
+            alert("dat klopt niet...");
+
         }
         
         // if(seconds <= 60){
@@ -243,6 +245,8 @@ if(document.URL.includes('puzzel-savanne-foutDier.html')){
                 endSavanneFoutdier();
             }
             
+        } else {
+            alert("dat klopt niet...")
         }
 
         e.preventDefault();

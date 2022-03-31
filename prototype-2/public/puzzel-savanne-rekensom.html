@@ -9,7 +9,10 @@
 </head>
 <body class="savanne-rekensom--background" onload="start()">
     <main>
-        
+        <audio id="js--puzzle_music" src="../audio/puzzel_music_short.mp3" loop></audio>
+        <audio id="js--good_job" src="../audio/alert_good.mp3"></audio>
+        <audio id="js--wrong" src="../audio/alert_wrong.mp3"></audio>
+        <audio id="js--puzzle_explain" src="../audio/dieren_raden.mp3" autoplay></audio>
         <section class="section-grid">
             <button class="backButton" onclick="window.location.href='dierentuinpad.html'"></button>
             <div class="savanne-rekensom--leeuw positie-leeuw1"></div>
@@ -17,10 +20,10 @@
             <div class="savanne-rekensom--giraffe positie-giraffe1"></div>
             <div class="savanne-rekensom--aap positie-aap1"></div>
             <div class="savanne-rekensom--aap positie-aap2"></div>
-            <form class="rekensom-form" action="dierentuinpad.html">
+            <form name="answerForm" class="rekensom-form">
                 <label class="rekensom-form--label" for="aantalDieren">Aantal dieren:</label>
-                <input class="rekensom-form--input" type="number" required>
-                <button class="rekensom-form--button" id="js--form-submit" onclick="endSavanneRekensom()" formaction="dierentuinpad.html" type="submit" value=""></button>
+                <input name="numberInput" class="rekensom-form--input" type="number" required>
+                <button class="rekensom-form--button" id="js--form-submit" type="submit" value=""></button>
             </form>  
         </section>
     </main>

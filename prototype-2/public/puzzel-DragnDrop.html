@@ -9,20 +9,17 @@
     <script src="../js/drag-drop.js" defer></script>
     <script src="../js/map.js" defer></script>
 </head>
-<body class="background" onload="start(), intro()">
-    <audio id="myAudio">
-        <source src="" type="audio/mpeg">
-        <source src="" type="audio/mpeg">
-        <source src="" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+<body class="background" onload="start()">
+    <audio src="../audio/plaatsen_dieren.mp3" type="audio/mpeg" autoplay></audio>
+    <audio id="js--good_job" src="../audio/alert_good.mp3"></audio>
+    <audio id="js--wrongAlert" src="../audio/alert_wrong.mp3"></audio>
     <div class="container">
         <button class="backButton" onclick="window.location.href='dierentuinpad.html'"><img src="/images/backButton.png"></button>
         <img src="../images/woodengatelong.png" alt="" class="inclosure gate1">
         <img src="../images/woodengatelong.png" alt="" class="inclosure gate2">
         <img src="../images/woodengatelong.png" alt="" class="inclosure gate3">
         <div class="board">
-            <div >
+            <div>
                 <img id="div1" class="turtleBD" src="../images/schildpad.png" ondrop="drop(event)" ondragover="allowDrop(event)"></img>
             </div>
             <div>
