@@ -7,8 +7,9 @@
     <title>Puzzel Prototype</title>
     <link rel="stylesheet" href="../styles/main.css">
     <script src="../js/drag-drop.js" defer></script>
+    <script src="../js/map.js" defer></script>
 </head>
-<body class="background">
+<body class="background" onload="start(), intro()">
     <audio id="myAudio">
         <source src="" type="audio/mpeg">
         <source src="" type="audio/mpeg">
@@ -16,7 +17,7 @@
         Your browser does not support the audio element.
       </audio>
     <div class="container">
-        <button class="backButton"><img src="/images/backButton.png"></button>
+        <button class="backButton" onclick="window.location.href='dierentuinpad.html'"><img src="/images/backButton.png"></button>
         <img src="../images/woodengatelong.png" alt="" class="inclosure gate1">
         <img src="../images/woodengatelong.png" alt="" class="inclosure gate2">
         <img src="../images/woodengatelong.png" alt="" class="inclosure gate3">
@@ -53,7 +54,7 @@
             </div> 
         </div> 
 
-        <button id="btnPuzzelAap" class="btnAap" type="button">&#10004</button>
+        <button id="btnPuzzelAap" class="btnAap" type="button" onclick="endSavanneDragnDrop()">&#10004</button>
     </div>    
 </body>
 </html>
