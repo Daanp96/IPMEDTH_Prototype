@@ -1,18 +1,18 @@
-const introPage = new Audio('../audio/puzzelAapIntro.mp3');
+const introPage = new Audio('../audio/introDragnDrop2.mp3');
 const alertGood = new Audio('../audio/puzzelAlertGood.mp3'); 
 const alertWrong = new Audio('../audio/puzzelAlertWrong.mp3');
 
 const backdropMonkeyLB = document.getElementById("div1");
-backdropMonkeyLB.style.opacity = "0.5";
+backdropMonkeyLB.style.opacity = "0.05";
 
 const backdropMOnkeyLO = document.getElementById("div2");
-backdropMOnkeyLO.style.opacity = "0.5";
+backdropMOnkeyLO.style.opacity = "0.05";
 
 const backdropMOnkeyRB = document.getElementById("div3");
-backdropMOnkeyRB.style.opacity = "0.5"; 
+backdropMOnkeyRB.style.opacity = "0.05"; 
 
 const backdropMOnkeyRO = document.getElementById("div4");
-backdropMOnkeyRO.style.opacity = "0.5"; 
+backdropMOnkeyRO.style.opacity = "0.05"; 
 
 const btnNext = document.getElementById("btnPuzzelAap");
 btnNext.style.opacity = "0";
@@ -50,7 +50,7 @@ function drop(e)
     if (e.target.id === document.getElementById(image).getAttribute('data-div')){ 
 
         good();
-        // alert("goed zo!");
+        //alert("goed zo!");
         e.target.appendChild(document.getElementById(image));
         let changeOpacity = document.getElementById(e.target.id);
         
@@ -70,14 +70,11 @@ function drop(e)
         // alert("nee, die is fout");
      }
     if(backdropMonkeyLB.style.opacity === "1" && backdropMOnkeyLO.style.opacity === "1" && backdropMOnkeyRB.style.opacity === "1" && backdropMOnkeyRO.style.opacity === "1"){
-        console.log("werkt")
+        // console.log("werkt")
         btnNext.style.opacity = "1";
     
 }
 
-}
-function endSavanneDragnDrop(){
-    window.location.href="dierentuinpad-4.html";  
 }
 
 function showButton(){

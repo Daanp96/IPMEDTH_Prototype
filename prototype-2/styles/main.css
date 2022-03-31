@@ -109,10 +109,14 @@ body {
     background-image: url('../images/newChapterButton.png');
     background-repeat: no-repeat;
     grid-column: 19 / span 1;
-    grid-row: 8 /span 1;
+    grid-row: 5 /span 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    opacity: 0;
 }
 .savanne-rekensom--background{
-    background-image: url('../images/achtergrond\ savanne.png');
+    background-image: url('../images/savanne-rekensom-achtergrond2.jpg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -171,39 +175,44 @@ body {
     grid-row: 8 /span 2;
 }
 .positie-leeuw2{
-    grid-column: 6 / span 1;
-    grid-row: 6 /span 1;
+    grid-column: 11 / span 1;
+    grid-row: 5 /span 1;
 }
-.positie-leeuw3{
-    grid-column: 4 / span 1;
-    grid-row: 6 /span 1;
-}
+
 .savanne-rekensom--giraffe{
     background-image: url('../images/giraffe.png');
     background-repeat: no-repeat;
     background-size: contain;
 }
 .positie-giraffe1{
-    grid-column: 16 / span 2;
+    grid-column: 5 / span 2;
     grid-row: 6 /span 2;
 }
-.positie-giraffe2{
-    grid-column: 17 / span 1;
-    grid-row: 6 /span 2;
+.savanne-rekensom--aap{
+    background-image: url('../images/monkey_puzzle/monkeyNoBanana.png');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
-.positie-giraffe3{
-    grid-column: 14 / span 2;
-    grid-row: 6 /span 2;
+.positie-aap1{
+    grid-column: 18 / span 1;
+    grid-row: 3 /span 1;
+    transform: rotate(6deg);
+}
+.positie-aap2{
+    grid-column: 5 / span 2;
+    grid-row: 2 /span 2;
+    transform: scaleX(-1) rotate(20deg);
+
 }
 
 .savanne-foutdier--background{
-    background-image: url('../images/savanne-foutdier-achtergrond.jpg');
+    background-image: url('../images/savanne-foutdier-achtergrond2.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
 }
 .foutdier-leeuwenhoofd{
-    background-image: url('../images/aapHoofd.png');
+    background-image: url('../images/leeuwen-hoofd.png');
     background-repeat: no-repeat;
     background-size: contain;
     grid-column: 9 / span 4;
@@ -237,8 +246,118 @@ body {
 }
 
 .background{
-    background-image: url('../images/monkey_bg.jpg');
-    background-position: center;
+    background-image: url('../images/achtergrond\ savanne.png');
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.inclosure{
+    z-index: 1;
+    width: 500px;
+    height: auto;
+}
+.gate1{
+    position: absolute;
+    left: 10%;
+    top: 60%;
+}
+.gate2{
+    position: absolute;
+    left: 50%;
+    top: 60%;
+}
+.gate3{
+    position: absolute;
+    left: 60%;
+    top: 85%;
+}
+
+.turtle{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 18%;
+    left: 58%;
+}
+.turtle:hover{
+    cursor: grab;
+}
+.lion{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 30%;
+    left: 80%;
+}
+.lion:hover{
+    cursor: grab;
+}
+.monkey{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+}
+.monkey:hover{
+    cursor: grab;
+}
+.giraffe{
+    width: 80px;
+    height: auto;
+    position: absolute;
+    top: 23%;
+    left: 6%;
+}
+.giraffe:hover{
+    cursor: grab;
+}
+
+.turtleBD{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    left:15%;
+    top: 80%;
+}
+
+.lionBD{
+    width: 120px;
+    height: auto;
+    position: absolute;
+    left: 55%;
+    top: 50%;
+}
+
+.monkeyBD{
+    z-index: 2;
+    width: 150px;
+    height: auto;
+    position: absolute;
+    left: 69%;
+    top: 56%;
+}
+
+
+.giraffeBD{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    left: 15%;
+    top: 45%;
+}
+
+.btnAap{
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    bottom: 5%;
+    left: 45%;
+    border-radius: 50px;
+    font-size: 4rem;
+    background-color: #05DA34;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
