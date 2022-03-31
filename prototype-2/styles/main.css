@@ -114,6 +114,7 @@ body {
     outline: none;
     background-color: transparent;
     opacity: 0;
+    cursor: pointer;
 }
 .savanne-rekensom--background{
     background-image: url('../images/savanne-rekensom-achtergrond2.jpg');
