@@ -21,9 +21,9 @@ function intro(){
     introPage.play();
 }
 
-window.onload = function(){
-    intro();
-}
+// window.onload = function(){
+//     intro();
+// }
 
 function good(){
     alertGood.play();
