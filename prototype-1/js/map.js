@@ -262,10 +262,10 @@ function endSavanneRekensom(){
 function endSavanneFoutdier(){
     window.location.href="dierentuinpad-3.html";  
 }
-function backButtonSavanneRekensom(){
-    window.location.href="dierentuinpad.html";  
-}
-function backButtonToSavanneRekensom(){
-    window.location.href="puzzel-savanne-rekensom.html";  
-}
+// function backButtonSavanneRekensom(){
+//     window.location.href="dierentuinpad.html";  
+// }
+// function backButtonToSavanneRekensom(){
+//     window.location.href="puzzel-savanne-rekensom.html";  
+// }
 
