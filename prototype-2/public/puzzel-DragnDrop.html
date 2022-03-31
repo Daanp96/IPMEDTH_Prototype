@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzel Prototype</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <script src="../js/drag-drop.js" defer></script>
+</head>
+<body class="background">
+    <audio id="myAudio">
+        <source src="" type="audio/mpeg">
+        <source src="" type="audio/mpeg">
+        <source src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    <div class="container">
+        <button class="backButton"><img src="/images/backButton.png"></button>
+        <img src="../images/woodengatelong.png" alt="" class="inclosure gate1">
+        <img src="../images/woodengatelong.png" alt="" class="inclosure gate2">
+        <img src="../images/woodengatelong.png" alt="" class="inclosure gate3">
+        <div class="board">
+            <div >
+                <img id="div1" class="turtleBD" src="../images/schildpad.png" ondrop="drop(event)" ondragover="allowDrop(event)"></img>
+            </div>
+            <div>
+                    <img id="div2" class="lionBD"src="../images/leeuw.png" ondrop="drop(event)" ondragover="allowDrop(event)"></img>
+            </div>
+            <div >
+                <img id="div3" class="monkeyBD" src="../images//monkey_puzzle/monkeyNoBanana.png"  ondrop="drop(event)" ondragover="allowDrop(event)"></img>
+            </div>
+            <div  >
+                <img id="div4" class="giraffeBD" src="../images/giraffe.png" ondrop="drop(event)" ondragover="allowDrop(event)"></img>
+            </div>
+
+
+        <div class="puzzelstukjes">
+            <div >
+                <img id="drag1" data-div="div1" class="turtle" draggable="true" ondragstart="drag(event)" src="../images/schildpad.png" >
+            </div>
+
+            <div >
+                <img id="drag2" data-div="div2" class="lion" draggable="true" ondragstart="drag(event)" src="../images/leeuw.png" >
+            </div>
+
+            <div >    
+                <img id="drag3" data-div="div3" class="monkey" draggable="true" ondragstart="drag(event)" src="../images/monkey_puzzle/monkeyNoBanana.png">
+            </div>
+
+            <div >   
+                <img id="drag4" data-div="div4" class="giraffe" draggable="true" ondragstart="drag(event)" src="../images/giraffe.png">
+            </div> 
+        </div> 
+
+        <button id="btnPuzzelAap" class="btnAap" type="button">&#10004</button>
+    </div>    
+</body>
+</html>

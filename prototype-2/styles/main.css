@@ -239,8 +239,118 @@ body {
 }
 
 .background{
-    background-image: url('../images/monkey_bg.jpg');
-    background-position: center;
+    background-image: url('../images/achtergrond\ savanne.png');
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.inclosure{
+    z-index: 1;
+    width: 500px;
+    height: auto;
+}
+.gate1{
+    position: absolute;
+    left: 10%;
+    top: 60%;
+}
+.gate2{
+    position: absolute;
+    left: 50%;
+    top: 60%;
+}
+.gate3{
+    position: absolute;
+    left: 60%;
+    top: 85%;
+}
+
+.turtle{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 18%;
+    left: 58%;
+}
+.turtle:hover{
+    cursor: grab;
+}
+.lion{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 30%;
+    left: 80%;
+}
+.lion:hover{
+    cursor: grab;
+}
+.monkey{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+}
+.monkey:hover{
+    cursor: grab;
+}
+.giraffe{
+    width: 80px;
+    height: auto;
+    position: absolute;
+    top: 23%;
+    left: 6%;
+}
+.giraffe:hover{
+    cursor: grab;
+}
+
+.turtleBD{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    left:15%;
+    top: 80%;
+}
+
+.lionBD{
+    width: 120px;
+    height: auto;
+    position: absolute;
+    left: 55%;
+    top: 50%;
+}
+
+.monkeyBD{
+    z-index: 2;
+    width: 150px;
+    height: auto;
+    position: absolute;
+    left: 69%;
+    top: 56%;
+}
+
+
+.giraffeBD{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    left: 15%;
+    top: 45%;
+}
+
+.btnAap{
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    bottom: 5%;
+    left: 45%;
+    border-radius: 50px;
+    font-size: 4rem;
+    background-color: #05DA34;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
