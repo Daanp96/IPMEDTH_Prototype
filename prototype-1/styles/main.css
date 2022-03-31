@@ -247,6 +247,11 @@ body {
     background-repeat: no-repeat;
     grid-column: 19 / span 1;
     grid-row: 8 /span 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    opacity: 0;
+    cursor: pointer;
 }
 .savanne-rekensom--background{
     background-image: url('../images/achtergrond\ savanne.png');
@@ -374,7 +379,7 @@ body {
 }
 
 .background{
-    background-image: url(/images/monkey_puzzle/monkey_bg.jpg);
+    background-image: url("../images/monkey_puzzle/monkey_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
