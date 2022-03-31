@@ -18,7 +18,7 @@ const doOverlay = () => {
 
     gate_shut.onended = () => {
         overlay.style.opacity = "0";
-        gate.src = "/images/zoo_gate_back.jpg";
+        gate.src = "prototype-2/images/zoo_gate_back.jpg";
         arrow.style.display = "none";
         lock.style.opacity = "1";
         oh_nee.volume = 1;
