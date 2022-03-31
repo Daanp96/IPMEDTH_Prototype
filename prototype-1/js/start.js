@@ -42,5 +42,5 @@ const enhanceLock = () => {
 }
 
 const nextPage = () => {
-    window.location = "/public/dierentuinpad.html";
+    window.location = "prototype-1/public/dierentuinpad.html";
 }
