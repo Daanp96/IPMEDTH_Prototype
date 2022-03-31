@@ -259,6 +259,7 @@ body {
     top: 60%;
 }
 .gate3{
+    width: 600px;
     position: absolute;
     left: 60%;
     top: 85%;
