@@ -374,7 +374,7 @@ body {
 }
 
 .background{
-    background-image: url(/images/monkey_puzzle/monkey_bg.jpg);
+    background-image: url("../images/monkey_puzzle/monkey_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }

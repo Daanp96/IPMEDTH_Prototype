@@ -18,7 +18,7 @@ const ratedStar9 = document.getElementById("js--ratedStar9");
 const map_music = document.getElementById("js--map_music");
 const puzzle_music = document.getElementById("js--puzzle_music");
 const good_job = document.getElementById("js--good_job");
-const wrong = document.getElementById("js--wrong");
+const wrongAlert = document.getElementById("js--wrong");
 
 // logging
 const key_input = document.getElementById("js--keyInput");
