@@ -21,9 +21,9 @@ function intro(){
     introPage.play();
 }
 
-window.onload = function(){
-    intro();
-}
+// window.onload = function(){
+//     intro();
+// }
 
 function good(){
     alertGood.play();
@@ -75,6 +75,9 @@ function drop(e)
     
 }
 
+}
+function endSavanneDragnDrop(){
+    window.location.href="dierentuinpad-4.html";  
 }
 
 function showButton(){

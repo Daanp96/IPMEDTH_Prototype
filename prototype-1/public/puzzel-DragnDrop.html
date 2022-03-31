@@ -7,16 +7,17 @@
     <title>Puzzel Prototype</title>
     <link rel="stylesheet" href="../styles/main.css">
     <script src="../js/drag-drop.js" defer></script>
+    <script src="../js/map.js" defer></script>
 </head>
-<body class="background">
+<body class="background" onload="start(), intro()">
     <audio id="myAudio">
-        <source src="../audio/puzzelAapIntro.mp3" type="audio.mpeg">
+        <source src="../audio/puzzelAapIntro.mp3" type="audio/mpeg">
         <source src="../audio/puzzelAlertGood.mp3" type="audio/mpeg">
         <source src="../audio/puzzelAlertWrong.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-      </audio>
-    <div class="container">
-        <button class="backButton"><img src="/images/backButton.png"></button>
+    </audio>
+    <div class="container" >
+        <button class="backButton" onclick="window.location.href='dierentuinpad-3.html'"><img src="/images/backButton.png"></button>
         <div class="board">
             <div class="monkeyBD__LB">
                 <img id="div1" src="/images/monkey_puzzle/monkeyLB.png" ondrop="drop(event)" ondragover="allowDrop(event)"></img>
@@ -50,7 +51,7 @@
             </div> 
         </div> 
 
-        <button id="btnPuzzelAap" class="btnAap" type="button">&#10004</button>
+        <button id="btnPuzzelAap" class="btnAap" type="button" onclick="endSavanneDragnDrop()">&#10004</button>
     </div>    
 </body>
 </html>
