@@ -20,6 +20,44 @@ const puzzle_music = document.getElementById("js--puzzle_music");
 const good_job = document.getElementById("js--good_job");
 const wrong = document.getElementById("js--wrong");
 
+// logging
+const key_input = document.getElementById("js--keyInput");
+const btn_log = document.getElementById("btnLogData");
+const keyPresses = []
+const keyObj = {
+    data: [],
+    puzzel: "" 
+}
+
+key_input.addEventListener('keydown', e => {
+    keyPresses.push(e.key);
+    console.log(keyPresses);
+});
+
+formSubmit.addEventListener('click', e => {
+    e.preventDefault();
+
+    keyObj.data = keyPresses;
+    keyObj.puzzel = formSubmit.getAttribute("data-puzzel");
+    const data = JSON.stringify(keyObj);
+
+    fetch('http://localhost:3000/sendData', {
+        method: 'POST', 
+        body: data,
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Access-Control-Allow-Credentials': true
+        }
+    })
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+});
+
 // antwoorden
 const reken_correct = 6;
 const foutDier_correct = "aap";

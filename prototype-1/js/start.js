@@ -6,6 +6,7 @@ const map = document.getElementById("js--map");
 
 // Audio
 const gate_shut = document.getElementById("js--gate_shut");
+gate_shut.volume = 0.15;
 const oh_nee = document.getElementById("js--oh_nee");
 const slot_uitleg = document.getElementById("js--slot_uitleg");
  
