@@ -11,6 +11,14 @@ const ratedStar4 = document.getElementById("js--ratedStar4");
 const ratedStar5 = document.getElementById("js--ratedStar5");
 const ratedStar6 = document.getElementById("js--ratedStar6");
 
+const map_music = document.getElementById("js--map_music");
+const puzzle_music = document.getElementById("js--puzzle_music");
+const good_job = document.getElementById("js--good_job");
+
+// antwoorden
+const reken_correct = 6;
+const foutDier_correct = "aap";
+
 let star2;
 let star3;
 let star5;
@@ -22,10 +30,12 @@ var startTime, endTime;
 if(document.URL.includes('dierentuinpad.html')){
     puzzel2Button.style.cursor = 'default';
     puzzel3Button.style.cursor = 'default';
+    map_music.play();
 }
 if(document.URL.includes('dierentuinpad-2.html')){
     puzzel1Button.style.cursor = 'default';
     puzzel3Button.style.cursor = 'default';
+    map_music.play();
 
     console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
     star2 = localStorage.getItem('star2');
@@ -42,6 +52,7 @@ if(document.URL.includes('dierentuinpad-2.html')){
 if(document.URL.includes('dierentuinpad-3.html')){
     puzzel1Button.style.cursor = 'default';
     puzzel2Button.style.cursor = 'default';
+    map_music.play();
 
     star2 = localStorage.getItem('star2');
     star3 = localStorage.getItem('star3');
@@ -66,104 +77,134 @@ if(document.URL.includes('dierentuinpad-3.html')){
         ratedStar6.style.opacity = "0";
     }
 }
-// if(document.URL.includes('dierentuinpad-4.html')){
-//     puzzel1Button.style.cursor = 'default';
-//     puzzel2Button.style.cursor = 'default';
-//     puzzel3Button.style.cursor = 'default';
-// }
+if(document.URL.includes('dierentuinpad-4.html')){
+    puzzel1Button.style.cursor = 'default';
+    puzzel2Button.style.cursor = 'default';
+    puzzel3Button.style.cursor = 'default';
+}
 
 function start(){
     startTime = new Date();
 }
 
 if(document.URL.includes('puzzel-savanne-rekensom.html')){
+
+    puzzle_music.play();
+
     formSubmit.addEventListener("click", function(e){
+
+        let form_answer = document.forms["answerForm"]["numberInput"].value;
+
         endTime = new Date();
         var timeDiff = endTime - startTime; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
         aantalSecondesSavanneRekensom = seconds;
-        console.log(aantalSecondesSavanneRekensom);
+        // console.log(aantalSecondesSavanneRekensom);
+
+        if(form_answer == reken_correct){
+            good_job.play();
+            
+            if(seconds <= 2){
+                localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
+                // console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
+                // console.log("3 sterren");
+            }
+            // if(seconds > 60 && seconds <= 120){
+            if(seconds > 2 && seconds <= 7){
+                try {
+                    // console.log("2 sterren");
+                    localStorage.setItem('star2', 0);
+                    // console.log(localStorage.getItem('star2'));
+                    localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
+                    // console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            // if(seconds > 120){
+            if(seconds > 8){
+                try {
+                    // console.log("1 ster"); 
+                    localStorage.setItem('star3', 0);
+                    // console.log(localStorage.getItem('star3'));
+                    localStorage.setItem('star2', 0);
+                    // console.log(localStorage.getItem('star2'));
+                    localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
+                    // console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            
+            good_job.onended = () => {
+                endSavanneRekensom();
+            }
+        } else {
+            alert("dat klopt niet...")
+        }
         
         // if(seconds <= 60){
-        if(seconds <= 2){
-            localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
-            console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
-            console.log("3 sterren");
-        }
-        // if(seconds > 60 && seconds <= 120){
-        if(seconds > 2 && seconds <= 7){
-            try {
-                console.log("2 sterren");
-                localStorage.setItem('star2', 0);
-                console.log(localStorage.getItem('star2'));
-                localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
-                console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        // if(seconds > 120){
-        if(seconds > 8){
-            try {
-                console.log("1 ster"); 
-                localStorage.setItem('star3', 0);
-                console.log(localStorage.getItem('star3'));
-                localStorage.setItem('star2', 0);
-                console.log(localStorage.getItem('star2'));
-                localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
-                console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
-            } catch (error) {
-                console.log(error);
-            }
-        }
         e.preventDefault();
 
     });
 }
 
 if(document.URL.includes('puzzel-savanne-foutDier.html')){
+    puzzle_music.play();
+
     formSubmit.addEventListener("click", function(e){
+        let text_answer = document.forms["answerForm"]["textInput"].value;
+
         endTime = new Date();
         var timeDiff = endTime - startTime; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
         aantalSecondesSavanneFoutdier = seconds;
         console.log(aantalSecondesSavanneFoutdier);
-        
-        // if(seconds <= 60){
-        if(seconds <= 2){
-            localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
-            console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
-            console.log("3 sterren");
-        }
-        // if(seconds > 60 && seconds <= 120){
-        if(seconds > 2 && seconds <= 7){
-            try {
-                console.log("2 sterren");
-                localStorage.setItem('star5', 0);
-                console.log(localStorage.getItem('star5'));
+
+        if (text_answer.toLowerCase() === foutDier_correct) {
+            good_job.play();
+
+            if(seconds <= 2){
                 localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
                 console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
-            } catch (error) {
-                console.log(error);
+                console.log("3 sterren");
             }
-        }
-        // if(seconds > 120){
-        if(seconds > 8){
-            try {
-                console.log("1 ster"); 
-                localStorage.setItem('star6', 0);
-                console.log(localStorage.getItem('star6'));
-                localStorage.setItem('star5', 0);
-                console.log(localStorage.getItem('star5'));
-                localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
-                console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
-                
-            } catch (error) {
-                console.log(error);
+            // if(seconds > 60 && seconds <= 120){
+            if(seconds > 2 && seconds <= 7){
+                try {
+                    console.log("2 sterren");
+                    localStorage.setItem('star5', 0);
+                    console.log(localStorage.getItem('star5'));
+                    localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
+                    console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
+                } catch (error) {
+                    console.log(error);
+                }
             }
+            // if(seconds > 120){
+            if(seconds > 8){
+                try {
+                    console.log("1 ster"); 
+                    localStorage.setItem('star6', 0);
+                    console.log(localStorage.getItem('star6'));
+                    localStorage.setItem('star5', 0);
+                    console.log(localStorage.getItem('star5'));
+                    localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
+                    console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
+                    
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+
+            good_job.onended = () => {
+                endSavanneFoutdier();
+            }
+            
         }
+
         e.preventDefault();
 
     });
