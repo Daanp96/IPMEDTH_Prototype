@@ -4,6 +4,8 @@ const puzzel3Button = document.getElementById('js--puzzel3Button');
 
 const formSubmit = document.getElementById("js--form-submit");
 const formSubmitDragnDrop = document.getElementById("btnPuzzelAap");
+const newChapterButton = document.getElementById("js--newChapterButton");
+
 
 const ratedStar1 = document.getElementById("js--ratedStar1");
 const ratedStar2 = document.getElementById("js--ratedStar2");
@@ -53,6 +55,7 @@ if(document.URL.includes('dierentuinpad.html')){
 }
 if(document.URL.includes('dierentuinpad-2.html')){
     puzzel1Button.style.cursor = 'default';
+    puzzel1Button.style.background = "#24c124";
     puzzel3Button.style.cursor = 'default';
     map_music.play();
 
@@ -67,11 +70,22 @@ if(document.URL.includes('dierentuinpad-2.html')){
         console.log(star3);
         ratedStar3.style.opacity = "0";
     }
+    // if(localStorage.getItem('star2') <= '2'){
+    //     console.log(star2);
+    //     ratedStar2.style.opacity = "0";
+    // }
+    // if(localStorage.getItem('star3') > '2' && localStorage.getItem('star3') <= '7'){
+    //     console.log(star3);
+    //     ratedStar3.style.opacity = "0";
+    // }
 }
 if(document.URL.includes('dierentuinpad-3.html')){
+    map_music.play();
+
     puzzel1Button.style.cursor = 'default';
     puzzel2Button.style.cursor = 'default';
-    map_music.play();
+    puzzel1Button.style.background = "#24c124";
+    puzzel2Button.style.background = "#24c124";
 
     star2 = localStorage.getItem('star2');
     star3 = localStorage.getItem('star3');
@@ -100,6 +114,9 @@ if(document.URL.includes('dierentuinpad-4.html')){
     puzzel1Button.style.cursor = 'default';
     puzzel2Button.style.cursor = 'default';
     puzzel3Button.style.cursor = 'default';
+    puzzel1Button.style.background = "#24c124";
+    puzzel2Button.style.background = "#24c124";
+    puzzel3Button.style.background = "#24c124";
 
     star2 = localStorage.getItem('star2');
     star3 = localStorage.getItem('star3');
@@ -133,6 +150,8 @@ if(document.URL.includes('dierentuinpad-4.html')){
         console.log(star9);
         ratedStar9.style.opacity = "0";
     }
+
+    newChapterButton.style.opacity = 1;
 }
 
 function start(){
@@ -314,6 +333,7 @@ if(document.URL.includes('puzzel-savanne-foutDier.html')){
 }
 
 if(document.URL.includes('puzzel-DragnDrop.html')){
+    // localStorage.clear();
     formSubmitDragnDrop.addEventListener("click", function(e){
         endTime = new Date();
         var timeDiff = endTime - startTime; //ms
@@ -366,10 +386,9 @@ function endSavanneRekensom(){
 function endSavanneFoutdier(){
     window.location.href="dierentuinpad-3.html";  
 }
-// function backButtonSavanneRekensom(){
-//     window.location.href="dierentuinpad.html";  
-// }
-// function backButtonToSavanneRekensom(){
-//     window.location.href="puzzel-savanne-rekensom.html";  
-// }
+function reset(){
+    localStorage.clear();
+    window.location.href="../../index.html"; 
+};
+
 
