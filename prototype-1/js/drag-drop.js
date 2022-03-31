@@ -22,7 +22,7 @@ function intro(){
 }
 
 window.onload = function(){
-    intro()
+    intro();
 }
 
 function good(){
