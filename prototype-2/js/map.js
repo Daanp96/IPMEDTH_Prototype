@@ -10,6 +10,15 @@ let aantalSecondesSavanneRekensom;
 let aantalSecondesSavanneFoutdier;
 let aantalSecondesSavanneDragnDrop;
 
+const map_music = document.getElementById("js--map_music");
+const puzzle_music = document.getElementById("js--puzzle_music");
+const good_job = document.getElementById("js--good_job");
+const wrong = document.getElementById("js--wrong");
+
+// antwoorden
+const reken_correct = 5;
+const foutDier_correct = "leeuw";
+
 var startTime, endTime;
 
 if(document.URL.includes('dierentuinpad.html')){
@@ -32,40 +41,52 @@ function start(){
 }
 
 if(document.URL.includes('puzzel-savanne-rekensom.html')){
-    
+
     formSubmit.addEventListener("click", function(e){
-        
+        let form_answer = document.forms["answerForm"]["numberInput"].value;
+
         endTime = new Date();
         var timeDiff = endTime - startTime; //ms
         timeDiff /= 1000;
         let seconds = Math.round(timeDiff);
         aantalSecondesSavanneRekensom = seconds;
         console.log(aantalSecondesSavanneRekensom);
-        
-        // if(seconds <= 60){
-        if(seconds <= 2){
-            localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
-            console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
-        }
-        // if(seconds > 60 && seconds <= 120){
-        if(seconds > 2 && seconds <= 7){
-            try {
-                localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
-                console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
 
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        // if(seconds > 120){
-        if(seconds > 8){
-            try {
+        if(form_answer == reken_correct){
+            good_job.play();
+            
+            if(seconds <= 2){
                 localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
                 console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
-            } catch (error) {
-                console.log(error);
             }
+            // if(seconds > 60 && seconds <= 120){
+            if(seconds > 2 && seconds <= 7){
+                try {
+                    localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
+                    console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
+    
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            // if(seconds > 120){
+            if(seconds > 8){
+                try {
+                    localStorage.setItem("aantalSecondesSavanneRekensom", aantalSecondesSavanneRekensom);
+                    console.log(localStorage.getItem('aantalSecondesSavanneRekensom'));
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            
+            good_job.onended = () => {
+                endSavanneRekensom();
+            }
+            
+        } else {
+            wrong.play();
         }
+        
         e.preventDefault();
 
     });
@@ -73,6 +94,7 @@ if(document.URL.includes('puzzel-savanne-rekensom.html')){
 
 if(document.URL.includes('puzzel-savanne-foutDier.html')){
     formSubmit.addEventListener("click", function(e){
+        let text_answer = document.forms["answerForm"]["textInput"].value;
         
         endTime = new Date();
         var timeDiff = endTime - startTime; //ms
@@ -80,34 +102,45 @@ if(document.URL.includes('puzzel-savanne-foutDier.html')){
         let seconds = Math.round(timeDiff);
         aantalSecondesSavanneFoutdier = seconds;
         console.log(aantalSecondesSavanneFoutdier);
+
+        if(text_answer.toLowerCase() == foutDier_correct){
+            good_job.play();
+            
+            // if(seconds <= 60){
+            if(seconds <= 2){
+                localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
+                console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
+
+            }
+            // if(seconds > 60 && seconds <= 120){
+            if(seconds > 2 && seconds <= 7){
+                try {
+                    localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
+                    console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
+
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            // if(seconds > 120){
+            if(seconds > 8){
+                try {
+                    localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
+                    console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
+                    
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+
+            good_job.onended = () => {
+                endSavanneFoutdier();
+            }
+
+        } else {
+            wrong.play();
+        }
         
-        // if(seconds <= 60){
-        if(seconds <= 2){
-            localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
-            console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
-
-        }
-        // if(seconds > 60 && seconds <= 120){
-        if(seconds > 2 && seconds <= 7){
-            try {
-                localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
-                console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
-
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        // if(seconds > 120){
-        if(seconds > 8){
-            try {
-                localStorage.setItem("aantalSecondesSavanneFoutdier", aantalSecondesSavanneFoutdier);
-                console.log(localStorage.getItem('aantalSecondesSavanneFoutdier'));
-
-                
-            } catch (error) {
-                console.log(error);
-            }
-        }
         e.preventDefault();
 
     });

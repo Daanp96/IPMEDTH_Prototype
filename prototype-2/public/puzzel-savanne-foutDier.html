@@ -9,11 +9,14 @@
 </head>
 <body class="savanne-foutdier--background" onload="start()">
     <main>
+        <audio id="js--good_job" src="../audio/alert_good.mp3"></audio>
+        <audio id="js--wrong" src="../audio/alert_wrong.mp3"></audio>
+        <audio id="js--puzzle_explain" src="../audio/fout_dier.mp3" autoplay></audio>
         <section class="section-grid">
-            <button class="backButton" onclick="window.location.href='dierentuinpad.html'"></button>
-            <form class="foutdier-form" action="dierentuinpad.html">
-                <input class="foutdier-form--input" type="text" value="Zebra" required>
-                <button class="foutdier-form--button" id="js--form-submit" onclick="endSavanneFoutdier()" formaction="dierentuinpad.html" type="submit" value=""></button>
+            <button class="backButton"></button>
+            <form name="answerForm" class="foutdier-form" action="dierentuinpad.html">
+                <input name="textInput" class="foutdier-form--input" type="text" value="Zebra" required>
+                <button class="foutdier-form--button" id="js--form-submit" type="submit" value=""></button>
             </form>  
             <div class="foutdier-leeuwenhoofd"></div>
         </section>

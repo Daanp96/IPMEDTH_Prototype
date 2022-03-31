@@ -10,13 +10,15 @@
 </head>
 <body>
     <main>
-        <audio id="js--audio" src="/audio/dichtslaan_heck.mp3"></audio>
+        <audio id="js--gate_shut" src="../audio/dichtslaan_hek.mp3"></audio>
+        <audio id="js--oh_nee" src="../audio/hek_dicht (mp3cut.net).mp3"></audio>
+        <audio id="js--slot_uitleg" src="../audio/slot_uitleg.mp3"></audio>
         <section id="js--overlay" class="overlay"></section>
         <section class="zoo_gate">
-            <img id="js--gate" class="zoo_gate_front" src="/images/zoo_front_road.jpg" alt="Zoo Gate Front">
-            <button onclick="doOverlay()">
-                <img id="js--arrow" class="zoo_gate_arrow" src="/images/arrow_button.png" alt="Arrow Button">
-            </button>
+            <img id="js--lock" class="zoo_gate_lock" src="../images/lock.png" alt="Gate Lock" onclick="enhanceLock()">
+            <img id="js--gate" class="zoo_gate_front" src="../images/zoo_front_road.jpg" alt="Zoo Gate Front">
+            <img id="js--arrow" class="zoo_gate_arrow" src="../images/arrow_button.png" alt="Arrow Button" onclick="doOverlay()">
+            <img id="js--map" class="zoo_gate_map" src="../images/plattegrond.png" alt="Zoo Map" onclick="nextPage()">
         </section>
     </main>
 </body>

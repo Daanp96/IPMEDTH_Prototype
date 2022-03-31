@@ -6,6 +6,7 @@ const map = document.getElementById("js--map");
 
 // Audio
 const gate_shut = document.getElementById("js--gate_shut");
+gate_shut.volume = 0.15;
 const oh_nee = document.getElementById("js--oh_nee");
 const slot_uitleg = document.getElementById("js--slot_uitleg");
  
@@ -18,7 +19,7 @@ const doOverlay = () => {
 
     gate_shut.onended = () => {
         overlay.style.opacity = "0";
-        gate.src = "/images/zoo_gate_back.jpg";
+        gate.src = "../images/zoo_gate_back.jpg";
         arrow.style.display = "none";
         lock.style.opacity = "1";
         oh_nee.volume = 1;
@@ -42,5 +43,5 @@ const enhanceLock = () => {
 }
 
 const nextPage = () => {
-    window.location = "prototype-2/public/dierentuinpad.html";
+    window.location = "../public/dierentuinpad.html";
 }
