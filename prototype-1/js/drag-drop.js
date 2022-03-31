@@ -1,6 +1,8 @@
 const introPage = new Audio('../audio/puzzelAapIntro.mp3');
 const alertGood = new Audio('../audio/puzzelAlertGood.mp3'); 
 const alertWrong = new Audio('../audio/puzzelAlertWrong.mp3');
+const puzzleMusic = document.getElementById("js--puzzle_music");
+puzzleMusic.volume = 0.2;
 
 const backdropMonkeyLB = document.getElementById("div1");
 backdropMonkeyLB.style.opacity = "0.5";
@@ -19,6 +21,8 @@ btnNext.style.opacity = "0";
 
 function intro(){
     introPage.play();
+    alert("Oh nee! De aap heeft wat problemen. Kan jij hem helpen?");
+    puzzleMusic.play();
 }
 
 // window.onload = function(){

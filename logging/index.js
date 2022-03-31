@@ -18,7 +18,6 @@ app.get('/', (req, res) => {
 const rando = Math.floor(Math.random() * 1000) + 1;
 
 app.post('/sendData', (req, res) => {
-    console.log(req.body);
     if(req.body){
         fs.writeFile(`logging/data/text_input_${req.body.puzzel}_${rando}.json`, JSON.stringify(req.body.data), (err) => {
             if (err) {
@@ -32,7 +31,6 @@ app.post('/sendData', (req, res) => {
 });
 
 app.post('/sendStorage', (req, res) => {
-    console.log(req.body);
     if(req.body){
         fs.writeFile(`logging/data/storage_prototype_${req.body.proto}_${rando}.json`, JSON.stringify(req.body.time), (err) => {
             if (err) {

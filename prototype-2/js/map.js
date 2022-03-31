@@ -256,7 +256,41 @@ function endSavanneDragnDrop(){
 }
 
 function reset(){
-    localStorage.clear();
-    window.location.href="../../index2.html"; 
+    const local = [];
+    const dataStorage = {
+        time: [],
+        proto: ""
+    };
+
+    for(let i = 0; i < localStorage.length; i++){
+        let key = localStorage.key(i);
+        let item = localStorage.getItem(key);
+        local.push(item);
+    }
+
+    dataStorage.time = local;
+    dataStorage.proto = "2";
+
+    const data = JSON.stringify(dataStorage);
+    console.log(data);
+
+    fetch('http://localhost:3000/sendStorage', {
+        method: 'POST', 
+        body: data,
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Access-Control-Allow-Credentials': true
+        }
+    })
+    .then(data => {
+        console.log('Success:', data);
+        localStorage.clear();
+        window.location.href="../../index2.html"; 
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
 };
 

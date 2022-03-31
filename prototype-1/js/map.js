@@ -21,6 +21,8 @@ const map_music = document.getElementById("js--map_music");
 const puzzle_music = document.getElementById("js--puzzle_music");
 const good_job = document.getElementById("js--good_job");
 const wrongAlert = document.getElementById("js--wrong");
+const rekensom_uitleg = document.getElementById("js--rekensom_uitleg");
+const foutDier_uitleg = document.getElementById("js--foutDier_uitleg");
 
 // logging
 const key_input = document.getElementById("js--keyInput");
@@ -49,11 +51,13 @@ let aantalSecondesSavanneDragnDrop;
 var startTime, endTime;
 
 if(document.URL.includes('dierentuinpad.html')){
+    map_music.volume = 0.5;
     puzzel2Button.style.cursor = 'default';
     puzzel3Button.style.cursor = 'default';
     map_music.play();
 }
 if(document.URL.includes('dierentuinpad-2.html')){
+    map_music.volume = 0.5;
     puzzel1Button.style.cursor = 'default';
     puzzel1Button.style.background = "#24c124";
     puzzel3Button.style.cursor = 'default';
@@ -80,6 +84,7 @@ if(document.URL.includes('dierentuinpad-2.html')){
     // }
 }
 if(document.URL.includes('dierentuinpad-3.html')){
+    map_music.volume = 0.5;
     map_music.play();
 
     puzzel1Button.style.cursor = 'default';
@@ -111,6 +116,8 @@ if(document.URL.includes('dierentuinpad-3.html')){
     }
 }
 if(document.URL.includes('dierentuinpad-4.html')){
+    map_music.volume = 0.5;
+    good_job.play();
 
     puzzel1Button.style.cursor = 'default';
     puzzel2Button.style.cursor = 'default';
@@ -160,11 +167,16 @@ function start(){
 }
 
 if(document.URL.includes('puzzel-savanne-rekensom.html')){
+    puzzle_music.volume = 0.2;
+
     number_input.addEventListener('keydown', e => {
         keyPresses.push(e.key);
         console.log(keyPresses);
     });
 
+    rekensom_uitleg.play();
+
+    alert("Kan jij het aantal dieren raden?");
     puzzle_music.play();
 
     formSubmit.addEventListener("click", function(e){
@@ -247,11 +259,16 @@ if(document.URL.includes('puzzel-savanne-rekensom.html')){
 }
 
 if(document.URL.includes('puzzel-savanne-foutDier.html')){
+    puzzle_music.volume = 0.2;
+
     key_input.addEventListener('keydown', e => {
         keyPresses.push(e.key);
         console.log(keyPresses);
     });
 
+    foutDier_uitleg.play();
+
+    alert("Kan jij het aantal dieren raden?");
     puzzle_music.play();
 
     formSubmit.addEventListener("click", function(e){
