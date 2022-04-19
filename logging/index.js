@@ -11,15 +11,15 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use(express.static('./logging/public/'));
 
-app.get('/', (req, res) => {
-    res.send('index.html');
-});
+// app.get('/', (req, res) => {
+//     res.send('index.html');
+// });
 
 const rando = Math.floor(Math.random() * 1000) + 1;
 
 app.post('/sendData', (req, res) => {
     if(req.body){
-        fs.writeFile(`logging/data/text_input_${req.body.puzzel}_${rando}.json`, JSON.stringify(req.body.data), (err) => {
+        fs.writeFile(`logging/dataTest/text_input_${req.body.puzzel}_${rando}.json`, JSON.stringify(req.body.data), (err) => {
             if (err) {
                 throw err;
             }
@@ -32,7 +32,7 @@ app.post('/sendData', (req, res) => {
 
 app.post('/sendStorage', (req, res) => {
     if(req.body){
-        fs.writeFile(`logging/data/storage_prototype_${req.body.proto}_${rando}.json`, JSON.stringify(req.body.time), (err) => {
+        fs.writeFile(`logging/dataTest/storage_prototype_${req.body.proto}_${rando}.json`, JSON.stringify(req.body.time), (err) => {
             if (err) {
                 throw err;
             }

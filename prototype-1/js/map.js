@@ -116,7 +116,7 @@ if(document.URL.includes('dierentuinpad-3.html')){
     }
 }
 if(document.URL.includes('dierentuinpad-4.html')){
-    map_music.volume = 0.5;
+    good_job.volume = 0.5;
     good_job.play();
 
     puzzel1Button.style.cursor = 'default';
